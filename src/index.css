@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 130 28% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 130 28% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 130 28% 20%;
+
+    /* Farm-origin colors */
+    --primary: 130 28% 54%; /* leaf green */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 29 53% 36%; /* earth brown */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 45 100% 68%; /* sunlight yellow */
+    --accent-foreground: 29 53% 20%;
+
+    --sky: 196 64% 69%; /* sky blue */
+    --sky-foreground: 0 0% 100%;
+
+    --muted: 130 15% 95%;
+    --muted-foreground: 130 15% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 130 20% 85%;
+    --input: 130 20% 90%;
+    --ring: 130 28% 54%;
+
+    --radius: 1rem;
+
+    /* Glassmorphism effects */
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .dark {
+    --background: 130 20% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 130 20% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 130 20% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 130 28% 54%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 29 53% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 45 100% 68%;
+    --accent-foreground: 29 53% 20%;
+
+    --sky: 196 64% 69%;
+    --sky-foreground: 0 0% 100%;
+
+    --muted: 130 15% 20%;
+    --muted-foreground: 130 15% 65%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 130 20% 25%;
+    --input: 130 20% 20%;
+    --ring: 130 28% 54%;
+
+    --glass-bg: 0 0% 0% / 0.2;
+    --glass-border: 0 0% 100% / 0.1;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
